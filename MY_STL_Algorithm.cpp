@@ -22,3 +22,21 @@ ll x=0,y=0;
 			else t+=5;
 			st.insert({{fx,fy},{x,y}});
 		}
+
+
+                 // MAP RELATED
+   
+
+    //map er vitor duita pair
+     map<pair<pair<int,int>,pair<int,int> >,bool> pr;
+        string s;
+        cin>>s;
+        for(i=0;i<s.length();i++){
+            if(s[i]=='E') x++;
+            if(s[i]=='W') x--;
+            if(s[i]=='N') y++;
+            if(s[i]=='S') y--;
+            if(pr[{{x,y},{a,b}}]){
+                ans++;
+            }
+            else ans+=5,pr[{{x,y},{a,b}}]=1,pr[{{a,b},{x,y}}]=1;
